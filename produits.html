@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="sitedeux.css">
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
+        <title>Veloci Food</title>
+        <script defer src="javascripthehe.js"></script>
+        <link rel="icon" type="image/x-icon" href="favicon.png">
+    </head>
+    <body>
+        <section class="subheader">
+            <nav> 
+                <a href="siteautre.html"><img src="VelociFood.png" class="logo"></a>
+                <div class="nav-links" id="navlinks"> 
+                    <i class="fa fa-times" onclick="hidemenu()"></i>             
+                    <ul>
+                        <li><a href="siteautre.html">ACCUEIL</a></li>                        
+                        <li><a href="produits.html">PRODUITS</a></li>
+                        <li><a href="contacts.html">CONTACT</a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" onclick="showmenu()"></i>
+            </nav>
+
+
+
+        <section class="products">
+            <div class="product">
+                <img src="product1.jpg" alt="Product 1">
+                <h2>Product 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        
+            <div class="product">
+                <img src="product2.jpg" alt="Product 2">
+                <h2>Product 2</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        
+            <!-- Ajoutez plus de produits ici -->
+        </section>
+        
+        
+
+
+
+
+        <section class="enpied">
+            <h4>EN SAVOIR PLUS</h4>
+            <div class="icones">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-linkedin"></i>
+            </div>
+        </section>
+    
+        <script>
+            var navlinks = document.getElementById("navlinks");
+    
+            function showmenu(){
+                navlinks.style.right = "0";
+            }
+    
+            function hidemenu(){
+                navlinks.style.right = "-200px";
+            }
+        </script>
+    </body>
+</html>
+    

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="sitedeux.css">
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
+        <title>Veloci Food </title>
+        <script defer src="javascripthehe.js"></script>
+        <link rel="icon" type="image/x-icon" href="favicon.png">
+    </head>
+    <body>
+        <section class="entete">
+            <nav> 
+                <a href="siteautre.html"><img src="VelociFood.png" class="logo"></a>
+                <div class="nav-links" id="navlinks">  
+                    <i class="fa fa-times" onclick="hidemenu()"></i>             
+                    <ul>
+                        <li><a href="siteautre.html">ACCUEIL</a></li>                        
+                        <li><a href="produits.html">PRODUITS</a></li>
+                        <li><a href="contacts.html">CONTACT</a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" onclick="showmenu()"></i>
+            </nav>
+            <div class="text-box">
+                <h1> Veloci Food</h1>
+                <p>Cherchez ce que vous souhaitez, Mangez ce que vous souhaitez</p>
+                <a href="produits.html" class="titlebtn">Decouvrez notre carte</a>
+            </div>
+        </section>
+
+
+        <!-- DESCRIPTION EN DESSOUS DE L'ENTETE -->
+        <section class="description">
+
+            <h1>Nos Produits</h1>
+            <div class="categoriemenu">
+                <div class="naturel">
+                    <h3>Des Tacos de qualité</h3>
+                    <p>Viandes : escalope, nuggets, tenders, kebab, merguez</p>
+                </div>
+                <div class="naturel">
+                    <h3>Des Kebabs </h3>
+                    <p> Pains : kebab, pita, galette, miche</p>
+                </div>
+                <div class="naturel">
+                    <h3>Des Pizzas façon italienne </h3>
+                    <p> Sauces : Algérienne, samouraî, harissa, blanche, ketchup ,burger, mayonaise, ketchup  </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- AUTRE DESCRIIPTION (C'EST PLUS JOLI) -->
+        <section class="services">
+            <h1>Un Service</h1>
+
+            <div class="categoriemenu">
+                <div class="acheter">
+                    <img src="buy.jpg">
+                    <div class="layer">
+                        <h3>De qualité</h3>
+                    </div>
+                </div>
+                <div class="acheter">
+                    <img src="cash.jpg">
+                    <div class="layer">
+                        <h3>Peu cher</h3>
+                    </div>
+                </div>
+                <div class="acheter">
+                    <img src="gift1.jpg">
+                    <div class="layer">
+                        <h3>Réconfortant</h3>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- PIED DE PAGE -->
+        <section class="enpied">
+            <h4>EN SAVOIR PLUS</h4>
+            <div class="icones">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-linkedin"></i>
+            </div>
+        </section>
+
+
+        <!-- CECI EST LE JAVASCRIPT POUR LE MENU DE LA PAGE REDUITE -->
+        <script>
+            var navlinks = document.getElementById("navlinks");
+
+            function showmenu(){
+                navlinks.style.right = "0";
+            }
+
+            function hidemenu(){
+                navlinks.style.right = "-200px";
+            }
+        </script>
+    </body>
+</html>
