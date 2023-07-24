@@ -12,6 +12,27 @@
     background-position: center;
     background-size: cover;
     position: relative;
+    overflow: hidden;
+    height: 600px; /* Ajustez la hauteur selon vos besoins */
+}
+
+.entete video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Placez la vidéo en arrière-plan en utilisant un z-index inférieur */
+}
+.subheader video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Placez la vidéo en arrière-plan en utilisant un z-index inférieur */
 }
 
 
@@ -115,7 +136,7 @@ nav .fa{
     display: none;
 }
 
-@media(max-width: 700px){
+@media(max-width: 768px){
     nav img{
         width: 200px;
     }
@@ -179,7 +200,7 @@ h3{
 }
 
 p{
-    color: black;
+    color: red;
     font-size: 14px;
     font-weight: 300;
     line-height: 22px;
@@ -282,6 +303,8 @@ p{
     width: 100%;
     text-align: center;
     padding: 30px 0;
+    margin-top: 80vh;
+    background-color: rgba(0,0,0,0.7);
     
 }
 
@@ -293,7 +316,7 @@ p{
 }
 
 .icones .fa{
-    color: #030615;
+    color: blue;
     margin: 0 13px;
     cursor: pointer;
     padding: 18px 0;
@@ -302,7 +325,7 @@ p{
 /* Contact */
 
 .subheader{
-    height: 150vh;
+    height: 100vh;
     width: 100%;
     background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(https://raw.githubusercontent.com/Thurn4X/PROJET-SITE/main/wp6899569-dark-mountain-wallpapers.jpg);
     background-position: center;
@@ -314,7 +337,22 @@ p{
 .subheader h1{
     font-size: 70px;
     margin-top: 70px;
+    z-index: 1; /* Ajoutez cette ligne pour placer le texte au-dessus de la vidéo */
 }
+
+  
+  .subheader video {
+    /* ... Vos autres styles ... */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    
+  }
+  
 
 
 .infocontact{
@@ -405,27 +443,44 @@ p{
 }
 
 
-.products {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-}
  
 /* Styles pour la section des produits */
+/* Appliquer Flexbox pour afficher les produits horizontalement */
 .products {
-    text-align: center; /* Centrer les produits horizontalement */
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Afficher les produits en colonne */
+    padding: 20px; /* Ajustez l'espacement selon vos préférences */
+    z-index: 1; /* Ajoutez cette ligne pour placer les produits au-dessus de la vidéo */
+    min-height: 100vh; /* Définit la hauteur de la section des produits à 100% de la hauteur de l'écran visible */
+    margin-bottom: 40px;
 }
-
+  
 .product {
-    width: 30%;
+    width: 27%; /* Ajuster la largeur des produits en fonction de vos besoins */
     padding: 20px;
     margin: 10px;
-    display: inline-block; /* Pour afficher les produits en ligne */
-    vertical-align: top; /* Aligner les produits en haut */
-    box-sizing: border-box; /* Inclure le padding dans la largeur */
-    text-align: left; /* Aligner le contenu du produit à gauche */
+    margin-bottom: 40px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0);
+
+    text-align: left;
+    transition: transform 0.3s ease;
+
 }
+
+
+/* Effet de zoom lorsqu'on survole l'image */
+.product img:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+
+
 
 .product img {
     width: 100%;
@@ -433,91 +488,56 @@ p{
     object-fit: cover;
 }
 
+
 .product h2 {
     margin-top: 10px;
     font-size: 1.2em;
+    color: aqua;
 }
 
 .product p {
     margin-top: 10px;
     font-size: 0.9em;
-    color: #666;
+    color: pink;
 }
 
 
-.grid{
-    margin-top: 100px;
-    display: block;
-    padding: 20px;
-    width: 25%;
-    padding-left: 25%;
-    
-}
 
-.grid-image {
-    width: 100%; /* L'image prendra la largeur totale de la colonne */
-    height: auto; /* La hauteur s'ajustera automatiquement en conservant les proportions d'origine */
-}
-.grid .colon{
-    flex-basis: 25%; /* Réduisez la taille des colonnes selon vos besoins */
-    height: 200px;
-    max-height: 200px;
-    background-color: pink;
-    margin-bottom: 100px;
-    padding: 20px;
-    margin: 0;
-    padding: 0;
-}
-
-.layergrid{
-    background: transparent;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: 0.5s;
-
-}
-
-.layergrid:hover{
-    background: rgba(0,0,100,0.5);;
-}
-
-.layergrid h3{
-    width: 100%;
-    font-weight: 500;
-    color: white;
-    font-size: 26px;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    position: absolute;
-    opacity: 0;
-    transition: 0.5s;
-}
-
-.layergrid:hover h3{
-    bottom: 50%;
-    opacity: 1;
-}
-
-.f1{
+  
+  /* Pour les écrans moyens, utilisez un sélecteur d'attributs avec une résolution maximale de 1199 pixels */
+  @media screen and (max-width: 1199px) {
+    .product img {
+      /* Ajustez la hauteur des images pour les écrans moyens */
+      max-height: 150px;
+    }
+  }
+  
+  /* Pour les petits écrans, utilisez un sélecteur d'attributs avec une résolution maximale de 768 pixels */
+  @media screen and (max-width: 768px) {
+    .product img {
+      /* Ajustez la hauteur des images pour les petits écrans */
+      max-height: 100px;
+    }
+  }
+  
+ 
+.f1 {
     flex-basis: 32%;
     border-radius: 8%;
     margin-bottom: 30px;
     position: relative;
     overflow: hidden;
-    background-image: url("gants.jpeg");
     background-size: cover;
     background-position: center;
-    
+    transition: transform 0.3s ease;
+
 }
 
 
-
-
-
+/* Effet de zoom lorsqu'on survole l'image */
+.f1 img:hover {
+    transform: scale(1.1);
+}
 
 
 

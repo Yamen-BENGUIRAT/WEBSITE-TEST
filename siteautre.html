@@ -10,13 +10,21 @@
     </head>
     <body>
         <section class="entete">
+            <video autoplay loop muted>
+                <source src="video.mp4" type="video/mp4">
+                <!-- Ajoutez une autre source de vidéo en WebM si nécessaire -->
+                <!-- <source src="chemin/vers/votre-video.webm" type="video/webm"> -->
+                Votre navigateur ne supporte pas la vidéo.
+            </video>
+
+
             <nav> 
                 <a href="siteautre.html"><img src="VelociFood.png" class="logo"></a>
                 <div class="nav-links" id="navlinks">  
                     <i class="fa fa-times" onclick="hidemenu()"></i>             
                     <ul>
                         <li><a href="siteautre.html">ACCUEIL</a></li>                        
-                        <li><a href="produits.html">PRODUITS</a></li>
+                        <li><a href="produits.html">CARTE</a></li>
                         <li><a href="contacts.html">CONTACT</a></li>
                     </ul>
                 </div>
@@ -32,6 +40,7 @@
 
         <!-- DESCRIPTION EN DESSOUS DE L'ENTETE -->
         <section class="description">
+            
 
             <h1>Nos Produits</h1>
             <div class="categoriemenu">
@@ -101,6 +110,37 @@
             function hidemenu(){
                 navlinks.style.right = "-200px";
             }
+
+            // Fonction pour détecter le niveau de zoom de la page
+            function detectZoom() {
+                var ratio = 0,
+                    screen = window.screen,
+                    ua = navigator.userAgent.toLowerCase();
+
+                if (window.devicePixelRatio !== undefined) {
+                    ratio = window.devicePixelRatio;
+                }
+                else if (~ua.indexOf('msie')) { // Pour Internet Explorer
+                    if (screen.deviceXDPI && screen.logicalXDPI) {
+                        ratio = screen.deviceXDPI / screen.logicalXDPI;
+                    }
+                }
+                else if (window.outerWidth !== undefined && window.innerWidth !== undefined) {
+                    ratio = window.outerWidth / window.innerWidth;
+                }
+                
+                // Mettre à jour l'échelle de l'image en fonction du niveau de zoom
+                var productImages = document.querySelectorAll(".product img");
+                productImages.forEach(function (img) {
+                    img.style.transform = "scale(" + (1 / ratio) + ")";
+                });
+            }
+
+                // Appel initial pour détecter le zoom lors du chargement de la page
+            detectZoom();
+
+        // Événement pour détecter le changement de zoom de la page
+            window.addEventListener("resize", detectZoom);
         </script>
     </body>
 </html>
