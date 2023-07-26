@@ -13,7 +13,6 @@
     background-size: cover;
     position: relative;
     overflow: hidden;
-    height: 600px; /* Ajustez la hauteur selon vos besoins */
 }
 
 .entete video {
@@ -464,7 +463,6 @@ p{
     margin-bottom: 40px;
     box-sizing: border-box;
     background-color: rgba(255, 255, 255, 0);
-
     text-align: left;
     transition: transform 0.3s ease;
 
